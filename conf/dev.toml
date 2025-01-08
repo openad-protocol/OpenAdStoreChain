@@ -1,0 +1,54 @@
+[mysql]
+master="root:123456@tcp(127.0.0.1:3306)/ad_server?charset=utf8mb4&parseTime=true&loc=Local"
+use_master_slave=false
+
+[redis]
+addrs=["adserverredis-9znmvc.serverless.usw1.cache.amazonaws.com:6379"]
+db_index = 0
+enable_tls = false
+
+[queen]
+addres="adserverredis-9znmvc.serverless.usw1.cache.amazonaws.com:6379"
+db_index = 1
+enable_tls = false
+
+[nats]
+host="127.0.0.1"
+port=4222
+subjects = [
+    "ad_info.tracerHash",
+    "ad_info.get_ad",
+    "ad_info.clickinfo",
+    "ad_info.loginfo",
+    "ad_info.ad_in_call",
+    "ad_info.get_ad_miss"
+]
+consumer_name = "worker1"
+use_jetstream = false
+
+[hash]
+get_ad=false
+log_info=false
+click_info=true
+tracer_hash=false
+ad_in_call=false
+get_ad_miss=false
+
+
+[ton_network.testnet]
+rpc_url = "https://data-seed-prebsc-1-s1.binance.org:8545"
+chain_id = "97"
+seed = "project afford syrup buzz knife chat snack nerve cage jar short balance talent easily august fluid auto version coyote kiwi satisfy crucial journey hurt"
+
+[ton_network.mainnet]
+rpc_url = "https://bsc-dataseed.binance.org"
+chain_id = "56"
+seed = "project afford syrup buzz knife chat snack nerve cage jar short balance talent easily august fluid auto version coyote kiwi satisfy crucial journey hurt"
+
+[mongo]
+ip = "mongo"
+port = 27017
+
+[global]
+version = "0.1"
+appname = "adServer"
