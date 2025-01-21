@@ -8,29 +8,32 @@ import (
 )
 
 type DataRawLog struct {
-	Id          *int64  `json:"id" xorm:"id pk autoincr BIGINT(8)"`
-	FirstName   *string `json:"first_name" xorm:"first_name VARCHAR(256)"`
-	LastName    *string `json:"last_name" xorm:"last_name text"`
-	UserName    *string `json:"user_name" xorm:"user_name text"`
-	Hash        *string `json:"hash" xorm:"hash VARCHAR(64)"`
-	FromType    *string `json:"from_type" xorm:"from_type comment('ajax, JsSDK, script,') VARCHAR(25)"`
-	Language    *string `json:"language" xorm:"language comment('语言') VARCHAR(8)"`
-	Location    *string `json:"location" xorm:"location text comment('位置')"`
-	Platform    *string `json:"platform" xorm:"platform VARCHAR(12)"`
-	ZoneId      *int64  `json:"zone_id" xorm:"zone_id not null comment('区域ID') BIGINT(64)"`
-	PublisherId *int64  `json:"publisher_id" xorm:"publisher_id not null comment('流量主ID') BIGINT(64)"`
-	EventId     *int64  `json:"event_id" xorm:"event_id not null comment('投流事件ID') BIGINT(64)"`
-	Signature   *string `json:"signature" xorm:"signature VARCHAR(255)"`
-	TimeStamp   *int64  `json:"time_stamp" xorm:"time_stamp BIGINT(13)"`
-	TraceId     *string `json:"trace_id" xorm:"trace_id VARCHAR(64)"`
-	UserId      *string `json:"user_id" xorm:"user_id comment('telegram id') VARCHAR(64)"`
-	Version     *string `json:"version"  xorm:"version comment('版本') VARCHAR(64)"`
-	IpAddress   *string `json:"ip_address" xorm:"ip_address comment('ip地址') VARCHAR(64)"`
-	Country     *string `json:"country" xorm:"country comment('国家') VARCHAR(8)"`
-	CreateAt    *int64  `json:"create_at" xorm:"create_at comment('创建时间') BIGINT(8)"`
-	RequestType *string `json:"request_type" xorm:"request_type default 'NULL' comment('请求类型:getAd,logInfo,clickinfo,cb') VARCHAR(12)"`
-	TraceHash   *string `json:"trace_hash" xorm:"trace_hash default 'NULL' comment('跟踪hash，指向表 ad_data_raw_traceInfo') VARCHAR(64)"`
-	Cb          *string `json:"cb" xorm:"cb default 'NULL' VARCHAR(255)"`
+	Id            *int64  `json:"id" xorm:"id pk autoincr BIGINT(8)"`
+	FirstName     *string `json:"first_name" xorm:"first_name VARCHAR(256)"`
+	LastName      *string `json:"last_name" xorm:"last_name text"`
+	UserName      *string `json:"user_name" xorm:"user_name text"`
+	Hash          *string `json:"hash" xorm:"hash VARCHAR(64)"`
+	FromType      *string `json:"from_type" xorm:"from_type comment('ajax, JsSDK, script,') VARCHAR(25)"`
+	Language      *string `json:"language" xorm:"language comment('语言') VARCHAR(8)"`
+	Location      *string `json:"location" xorm:"location text comment('位置')"`
+	Platform      *string `json:"platform" xorm:"platform VARCHAR(12)"`
+	ZoneId        *int64  `json:"zone_id" xorm:"zone_id not null comment('区域ID') BIGINT(64)"`
+	PublisherId   *int64  `json:"publisher_id" xorm:"publisher_id not null comment('流量主ID') BIGINT(64)"`
+	EventId       *int64  `json:"event_id" xorm:"event_id not null comment('投流事件ID') BIGINT(64)"`
+	Signature     *string `json:"signature" xorm:"signature VARCHAR(255)"`
+	TimeStamp     *int64  `json:"time_stamp" xorm:"time_stamp BIGINT(13)"`
+	TraceId       *string `json:"trace_id" xorm:"trace_id VARCHAR(64)"`
+	UserId        *string `json:"user_id" xorm:"user_id comment('telegram id') VARCHAR(64)"`
+	Version       *string `json:"version"  xorm:"version comment('版本') VARCHAR(64)"`
+	IpAddress     *string `json:"ip_address" xorm:"ip_address comment('ip地址') VARCHAR(64)"`
+	Country       *string `json:"country" xorm:"country comment('国家') VARCHAR(8)"`
+	CreateAt      *int64  `json:"create_at" xorm:"create_at comment('创建时间') BIGINT(8)"`
+	RequestType   *string `json:"request_type" xorm:"request_type default 'NULL' comment('请求类型:getAd,logInfo,clickinfo,cb') VARCHAR(12)"`
+	TraceHash     *string `json:"trace_hash" xorm:"trace_hash default 'NULL' comment('跟踪hash，指向表 ad_data_raw_traceInfo') VARCHAR(64)"`
+	Cb            *string `json:"cb" xorm:"cb default 'NULL' VARCHAR(255)"`
+	WalletType    *string `json:"wallet_type" xorm:"wallet_type default 'NULL' VARCHAR(64)"`
+	WalletAddress *string `json:"wallet_address" xorm:"wallet_address default 'NULL' VARCHAR(64)"`
+	IsPremium     *string `json:"is_premium" xorm:"is_premium default 'NULL' VARCHAR(64)"`
 }
 
 func (o *DataRawLog) TableName() string {

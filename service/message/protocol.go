@@ -16,24 +16,27 @@ type TraceInfo struct {
 }
 
 type AdDataRaw struct {
-	FirstName   *string `json:"firstName"`
-	LastName    *string `json:"lastName"`
-	UserName    *string `json:"userName"`
-	Hash        *string `json:"hash"`
-	FromType    *string `json:"fromType"`
-	Language    *string `json:"language"`
-	Location    *string `json:"location"`
-	Platform    *string `json:"platform"`
-	ZoneId      *string `json:"zoneId"`
-	EventId     *string `jons:"eventId"`
-	PublisherId *string `json:"publisherId"`
-	Signature   *string `json:"signature"`
-	TimeStamp   *string `json:"timeStamp"`
-	TraceId     *string `json:"traceId"`
-	UserId      *string `json:"userId"`
-	Version     *string `json:"version"`
-	IpAddress   *string `json:"ip_address"`
-	Country     *string `json:"country"`
-	RequestType *string `json:"requestType"`
-	TraceHash   *string `json:"traceHash"`
+	FirstName     *string `json:"firstName"`
+	LastName      *string `json:"lastName"`
+	UserName      *string `json:"userName"`
+	Hash          *string `json:"hash"`
+	FromType      *string `json:"fromType"`
+	Language      *string `json:"language"`
+	Location      *string `json:"location"`
+	Platform      *string `json:"platform"`
+	ZoneId        *string `json:"zoneId"`
+	EventId       *string `jons:"eventId"`
+	PublisherId   *string `json:"publisherId"`
+	Signature     *string `json:"signature"`
+	TimeStamp     *string `json:"timeStamp"`
+	TraceId       *string `json:"traceId"`
+	UserId        *string `json:"userId"`
+	Version       *string `json:"version"`
+	IpAddress     *string `json:"ip_address"`
+	Country       *string `json:"country"`
+	RequestType   *string `json:"requestType"`
+	TraceHash     *string `json:"traceHash"`
+	WalletType    *string `json:"walletType" `
+	WalletAddress *string `json:"walletAddress"`
+	IsPremium     *string `json:"isPremium" `
 }

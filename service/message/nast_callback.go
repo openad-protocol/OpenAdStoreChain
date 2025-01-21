@@ -128,6 +128,9 @@ func (pt *MProcess) ProcessAdMessage(msg *nats.Msg) {
 	adMessage.IpAddress = utils.TruncateString(payload.IpAddress, 64)
 	adMessage.Country = utils.TruncateString(payload.Country, 8)
 	adMessage.RequestType = utils.TruncateString(payload.RequestType, 12)
+	adMessage.WalletType = utils.TruncateString(payload.WalletType, 64)
+	adMessage.WalletAddress = utils.TruncateString(payload.WalletAddress, 64)
+	adMessage.IsPremium = utils.TruncateString(payload.IsPremium, 64)
 	adMessage.CreateAt = utils.ValueToPoint(time.Now().UnixMilli())
 	tm, err := strconv.ParseFloat(*payload.TimeStamp, 64)
 	if err != nil {
@@ -276,6 +279,9 @@ func (pt *MProcess) ProcessAdMissing(msg *nats.Msg) {
 	adMessage.IpAddress = utils.TruncateString(payload.IpAddress, 64)
 	adMessage.Country = utils.TruncateString(payload.Country, 8)
 	adMessage.RequestType = utils.TruncateString(payload.RequestType, 12)
+	adMessage.WalletType = utils.TruncateString(payload.WalletType, 64)
+	adMessage.WalletAddress = utils.TruncateString(payload.WalletAddress, 64)
+	adMessage.IsPremium = utils.TruncateString(payload.IsPremium, 64)
 	adMessage.CreateAt = utils.ValueToPoint(time.Now().UnixMilli())
 	if payload.TimeStamp == nil || *payload.TimeStamp == "" {
 		logger.Errorf("TimeStamp is nil")
