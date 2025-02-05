@@ -23,6 +23,7 @@ func init() {
 		logger.Ctx(ctx)
 		logger.SetLevel(logs.LDEBUG)
 		logger.SetCaller(true)
+		logger.SetMaxSize(2048)
 		// 设置同时显示到控制台
 		// 默认只输出到文件
 		logger.SetCons(true)
@@ -30,6 +31,7 @@ func init() {
 		logger.SetFile("./logs/debug.log")
 		ctx := logs.TraceCtx(context.Background())
 		logger.Ctx(ctx)
+		logger.SetMaxSize(2048)
 		logger.SetLevel(logs.LDEBUG)
 		logger.SetCaller(true)
 		// 设置同时显示到控制台
