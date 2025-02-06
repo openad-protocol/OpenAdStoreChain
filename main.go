@@ -20,9 +20,10 @@ func main() {
 	natsPort := conf.Config.Nats.Port
 	natsUrl := "nats://" + natsHost + ":" + strconv.Itoa(natsPort)
 	csName := conf.Config.Nats.ConsumerName
+	useStream := conf.Config.Nats.UseJetStream
 
 	// 初始化服务
-	q := message.NewNatsQueen(natsUrl, csName)
+	q := message.NewNatsQueen(natsUrl, csName, useStream)
 	for _, v := range conf.Config.Nats.Subjects {
 		bAddResult := q.AddSubscription(v)
 		if bAddResult {

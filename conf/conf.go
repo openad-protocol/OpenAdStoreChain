@@ -56,6 +56,7 @@ type appCfg struct {
 		Port         int      `json:"port" tom:"port"`
 		Subjects     []string `json:"subjects" tom:"subjects"`
 		ConsumerName string   `json:"consumer_name" toml:"consumer_name"`
+		UseJetStream bool     `josn:"use_jetstream" toml:"use_jetstream"`
 	}
 	Mongo struct {
 		Ip   string `json:"ip"`

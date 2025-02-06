@@ -20,8 +20,7 @@ type NatsQueen struct {
 	useStream bool
 }
 
-func NewNatsQueen(url, csName string) IMessage {
-	useStream := false
+func NewNatsQueen(url, csName string, useStream bool) IMessage {
 	conn, err := adNats.NewNatsConnect(url, useStream)
 	if err != nil {
 		panic(fmt.Sprintf("Connection to Nats Error %v", err))
