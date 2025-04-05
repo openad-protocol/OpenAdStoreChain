@@ -9,9 +9,14 @@ import (
 
 type DataRawLog struct {
 	Id            *int64  `json:"id" xorm:"id pk autoincr BIGINT(8)"`
+	// telegram
 	FirstName     *string `json:"first_name" xorm:"first_name VARCHAR(256)"`
 	LastName      *string `json:"last_name" xorm:"last_name text"`
 	UserName      *string `json:"user_name" xorm:"user_name text"`
+	// line
+	ChannelId     *string `json:"channel_id" xorm:"channel_id VARCHAR(64)"`
+	LiffId        *string `json:"liff_id" xorm:"liff_id VARCHAR(64)"`
+	DisplayName   *string `json:"display_name" xorm:"display_name text"`
 	Hash          *string `json:"hash" xorm:"hash VARCHAR(64)"`
 	FromType      *string `json:"from_type" xorm:"from_type comment('ajax, JsSDK, script,') VARCHAR(25)"`
 	Language      *string `json:"language" xorm:"language comment('语言') VARCHAR(8)"`

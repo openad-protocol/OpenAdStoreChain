@@ -11,11 +11,12 @@ import (
 	"AdServerCollector/utils"
 	"encoding/json"
 	"fmt"
+	"strconv"
+	"time"
+
 	"github.com/go-xorm/xorm"
 	"github.com/nats-io/nats.go"
 	"golang.org/x/crypto/sha3"
-	"strconv"
-	"time"
 )
 
 type MProcess struct {
@@ -131,6 +132,7 @@ func (pt *MProcess) ProcessAdMessage(msg *nats.Msg) {
 	adMessage.WalletType = utils.TruncateString(payload.WalletType, 64)
 	adMessage.WalletAddress = utils.TruncateString(payload.WalletAddress, 64)
 	adMessage.IsPremium = utils.TruncateString(payload.IsPremium, 64)
+	adMessage.ChannelId = utils.TruncateString(payload.ChannelId)
 	adMessage.CreateAt = utils.ValueToPoint(time.Now().UnixMilli())
 	tm, err := strconv.ParseFloat(*payload.TimeStamp, 64)
 	if err != nil {

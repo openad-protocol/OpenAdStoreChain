@@ -16,9 +16,15 @@ type TraceInfo struct {
 }
 
 type AdDataRaw struct {
-	FirstName     *string `json:"firstName"`
-	LastName      *string `json:"lastName"`
-	UserName      *string `json:"userName"`
+	// telegram
+	FirstName *string `json:"firstName"`
+	LastName  *string `json:"lastName"`
+	UserName  *string `json:"userName"`
+	// line
+	ChanneId    *string `json:"channeId"`
+	LiffId      *string `json:"liffId"`
+	DisplayName *string `json:"displayName"`
+
 	Hash          *string `json:"hash"`
 	FromType      *string `json:"fromType"`
 	Language      *string `json:"language"`
